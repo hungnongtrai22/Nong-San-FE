@@ -113,7 +113,7 @@ export default function AboutTestimonials() {
 
   const renderLink = (
     <Button color="primary" endIcon={<Iconify icon="eva:arrow-ios-forward-fill" />}>
-      Read more testimonials
+      Đọc thêm nhận xét từ khách hàng khác
     </Button>
   );
 
