@@ -1,7 +1,7 @@
 import { m, useScroll } from 'framer-motion';
 import { useEffect, useRef, useState, useCallback } from 'react';
 // @mui
-import { styled, alpha, useTheme } from '@mui/material/styles';
+import { styled, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
@@ -123,7 +123,7 @@ const StyledPolygon = styled('div')<StyledPolygonProps>(
 export default function HomeHero() {
   const mdUp = useResponsive('up', 'md');
 
-  const theme = useTheme();
+  // const theme = useTheme();
 
   const heroRef = useRef<HTMLDivElement | null>(null);
 
@@ -131,7 +131,7 @@ export default function HomeHero() {
 
   const [percent, setPercent] = useState(0);
 
-  const isLight = theme.palette.mode === 'light';
+  // const isLight = theme.palette.mode === 'light';
 
   const getScroll = useCallback(() => {
     let heroHeight = 0;
@@ -285,83 +285,83 @@ export default function HomeHero() {
     </Stack>
   );
 
-  const renderSlides = (
-    <Stack
-      direction="row"
-      alignItems="flex-start"
-      sx={{
-        height: '150%',
-        position: 'absolute',
-        opacity: opacity > 0 ? opacity : 0,
-        transform: `skew(${-16 - percent / 24}deg, ${4 - percent / 16}deg)`,
-      }}
-    >
-      <Stack
-        component={m.div}
-        variants={varFade().in}
-        sx={{
-          width: 344,
-          position: 'relative',
-        }}
-      >
-        <Box
-          component={m.img}
-          animate={{ y: ['0%', '100%'] }}
-          transition={transition}
-          alt={isLight ? 'light_1' : 'dark_1'}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_1.webp`
-              : `/assets/images/home/hero/dark_1.webp`
-          }
-          sx={{ position: 'absolute', mt: -5 }}
-        />
-        <Box
-          component={m.img}
-          animate={{ y: ['-100%', '0%'] }}
-          transition={transition}
-          alt={isLight ? 'light_1' : 'dark_1'}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_1.webp`
-              : `/assets/images/home/hero/dark_1.webp`
-          }
-          sx={{ position: 'absolute' }}
-        />
-      </Stack>
+  // const renderSlides = (
+  //   <Stack
+  //     direction="row"
+  //     alignItems="flex-start"
+  //     sx={{
+  //       height: '150%',
+  //       position: 'absolute',
+  //       opacity: opacity > 0 ? opacity : 0,
+  //       transform: `skew(${-16 - percent / 24}deg, ${4 - percent / 16}deg)`,
+  //     }}
+  //   >
+  //     <Stack
+  //       component={m.div}
+  //       variants={varFade().in}
+  //       sx={{
+  //         width: 344,
+  //         position: 'relative',
+  //       }}
+  //     >
+  //       <Box
+  //         component={m.img}
+  //         animate={{ y: ['0%', '100%'] }}
+  //         transition={transition}
+  //         alt={isLight ? 'light_1' : 'dark_1'}
+  //         src={
+  //           isLight
+  //             ? `/assets/images/home/hero/light_1.webp`
+  //             : `/assets/images/home/hero/dark_1.webp`
+  //         }
+  //         sx={{ position: 'absolute', mt: -5 }}
+  //       />
+  //       <Box
+  //         component={m.img}
+  //         animate={{ y: ['-100%', '0%'] }}
+  //         transition={transition}
+  //         alt={isLight ? 'light_1' : 'dark_1'}
+  //         src={
+  //           isLight
+  //             ? `/assets/images/home/hero/light_1.webp`
+  //             : `/assets/images/home/hero/dark_1.webp`
+  //         }
+  //         sx={{ position: 'absolute' }}
+  //       />
+  //     </Stack>
 
-      <Stack
-        component={m.div}
-        variants={varFade().in}
-        sx={{ width: 720, position: 'relative', ml: -5 }}
-      >
-        <Box
-          component={m.img}
-          animate={{ y: ['100%', '0%'] }}
-          transition={transition}
-          alt={isLight ? 'light_2' : 'dark_2'}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_2.webp`
-              : `/assets/images/home/hero/dark_2.webp`
-          }
-          sx={{ position: 'absolute', mt: -5 }}
-        />
-        <Box
-          component={m.img}
-          animate={{ y: ['0%', '-100%'] }}
-          transition={transition}
-          alt={isLight ? 'light_2' : 'dark_2'}
-          src={
-            isLight
-              ? `/assets/images/home/hero/light_2.webp`
-              : `/assets/images/home/hero/dark_2.webp`
-          }
-          sx={{ position: 'absolute' }}
-        />
-      </Stack>
-    </Stack>
-  );
+  //     <Stack
+  //       component={m.div}
+  //       variants={varFade().in}
+  //       sx={{ width: 720, position: 'relative', ml: -5 }}
+  //     >
+  //       <Box
+  //         component={m.img}
+  //         animate={{ y: ['100%', '0%'] }}
+  //         transition={transition}
+  //         alt={isLight ? 'light_2' : 'dark_2'}
+  //         src={
+  //           isLight
+  //             ? `/assets/images/home/hero/light_2.webp`
+  //             : `/assets/images/home/hero/dark_2.webp`
+  //         }
+  //         sx={{ position: 'absolute', mt: -5 }}
+  //       />
+  //       <Box
+  //         component={m.img}
+  //         animate={{ y: ['0%', '-100%'] }}
+  //         transition={transition}
+  //         alt={isLight ? 'light_2' : 'dark_2'}
+  //         src={
+  //           isLight
+  //             ? `/assets/images/home/hero/light_2.webp`
+  //             : `/assets/images/home/hero/dark_2.webp`
+  //         }
+  //         sx={{ position: 'absolute' }}
+  //       />
+  //     </Stack>
+  //   </Stack>
+  // );
 
   const renderPolygons = (
     <>

@@ -1,21 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 import { m } from 'framer-motion';
 // @mui
-import { useTheme, alpha } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 // components
-import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 
 export default function AboutVision() {
-  const theme = useTheme();
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlay, setIsPlay] = useState(false);
 
@@ -51,36 +48,36 @@ export default function AboutVision() {
       </video>
     );
 
-  const renderLogo = (
-    <Stack
-      direction="row"
-      flexWrap="wrap"
-      alignItems="center"
-      justifyContent="center"
-      sx={{
-        width: 1,
-        zIndex: 9,
-        bottom: 0,
-        opacity: 0.48,
-        position: 'absolute',
-        py: { xs: 1.5, md: 2.5 },
-      }}
-    >
-      {['ibm', 'lya', 'spotify', 'netflix', 'hbo', 'amazon'].map((logo) => (
-        <Box
-          component={m.img}
-          key={logo}
-          variants={varFade().in}
-          alt={logo}
-          src={`/assets/icons/brands/ic_brand_${logo}.svg`}
-          sx={{
-            m: { xs: 1.5, md: 2.5 },
-            height: { xs: 20, md: 32 },
-          }}
-        />
-      ))}
-    </Stack>
-  );
+  // const renderLogo = (
+  //   <Stack
+  //     direction="row"
+  //     flexWrap="wrap"
+  //     alignItems="center"
+  //     justifyContent="center"
+  //     sx={{
+  //       width: 1,
+  //       zIndex: 9,
+  //       bottom: 0,
+  //       opacity: 0.48,
+  //       position: 'absolute',
+  //       py: { xs: 1.5, md: 2.5 },
+  //     }}
+  //   >
+  //     {['ibm', 'lya', 'spotify', 'netflix', 'hbo', 'amazon'].map((logo) => (
+  //       <Box
+  //         component={m.img}
+  //         key={logo}
+  //         variants={varFade().in}
+  //         alt={logo}
+  //         src={`/assets/icons/brands/ic_brand_${logo}.svg`}
+  //         sx={{
+  //           m: { xs: 1.5, md: 2.5 },
+  //           height: { xs: 20, md: 32 },
+  //         }}
+  //       />
+  //     ))}
+  //   </Stack>
+  // );
 
   return (
     <Box

@@ -23,22 +23,22 @@ type Props = {
   filters: IProductTableFilters;
   onFilters: (name: string, value: IProductTableFilterValue) => void;
   //
-  stockOptions: {
-    value: string;
-    label: string;
-  }[];
-  publishOptions: {
-    value: string;
-    label: string;
-  }[];
+  // stockOptions: {
+  //   value: string;
+  //   label: string;
+  // }[];
+  // publishOptions: {
+  //   value: string;
+  //   label: string;
+  // }[];
 };
 
 export default function ProductTableToolbar({
   filters,
   onFilters,
   //
-  stockOptions,
-  publishOptions,
+  // stockOptions,
+  // publishOptions,
 }: Props) {
   const popover = usePopover();
     const [categories, setCategories] = useState([]);

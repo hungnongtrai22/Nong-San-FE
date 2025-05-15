@@ -1,7 +1,6 @@
 // @mui
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
@@ -17,7 +16,6 @@ import { bgBlur } from 'src/theme/css';
 import { paths } from 'src/routes/paths';
 // components
 import Logo from 'src/components/logo';
-import Label from 'src/components/label';
 //
 import { useAuthContext } from 'src/auth/hooks';
 
@@ -34,7 +32,7 @@ import LogoutButton from '../_common/logout-button';
 export default function Header() {
   const theme = useTheme();
 
-  const { authenticated, method, user } = useAuthContext();
+  const { authenticated, user } = useAuthContext();
       console.log("TEST", authenticated);
 
   const mdUp = useResponsive('up', 'md');

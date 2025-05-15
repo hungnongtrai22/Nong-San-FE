@@ -21,7 +21,7 @@ import { ICategory, IProduct, IProductTableFilters, IProductTableFilterValue } f
 // hooks
 import { useBoolean } from 'src/hooks/use-boolean';
 // _mock
-import { PRODUCT_STOCK_OPTIONS } from 'src/_mock';
+// import { PRODUCT_STOCK_OPTIONS } from 'src/_mock';
 // components
 import { useSettingsContext } from 'src/components/settings';
 import {
@@ -56,10 +56,10 @@ const TABLE_HEAD = [
   { id: '', width: 88 },
 ];
 
-const PUBLISH_OPTIONS = [
-  { value: 'published', label: 'Published' },
-  { value: 'draft', label: 'Draft' },
-];
+// const PUBLISH_OPTIONS = [
+//   { value: 'published', label: 'Published' },
+//   { value: 'draft', label: 'Draft' },
+// ];
 
 const defaultFilters = {
   name: '',
@@ -208,8 +208,8 @@ export default function ProductListView() {
             filters={filters}
             onFilters={handleFilters}
             //
-            stockOptions={PRODUCT_STOCK_OPTIONS}
-            publishOptions={PUBLISH_OPTIONS}
+            // stockOptions={PRODUCT_STOCK_OPTIONS}
+            // publishOptions={PUBLISH_OPTIONS}
           />
 
           {canReset && (

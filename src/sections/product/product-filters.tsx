@@ -6,12 +6,10 @@ import Radio from '@mui/material/Radio';
 import Stack from '@mui/material/Stack';
 import Badge from '@mui/material/Badge';
 import Drawer from '@mui/material/Drawer';
-import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
 import Divider from '@mui/material/Divider';
 import Tooltip from '@mui/material/Tooltip';
-import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -21,7 +19,6 @@ import { IProductFilters, IProductFilterValue } from 'src/types/product';
 // components
 import Iconify from 'src/components/iconify';
 import Scrollbar from 'src/components/scrollbar';
-import { ColorPicker } from 'src/components/color-utils';
 
 const MAX = 1000000;
 
@@ -86,15 +83,15 @@ export default function ProductFilters({
        
       }, [handleGetAllCategory]);
 
-  const handleFilterGender = useCallback(
-    (newValue: string) => {
-      const checked = filters.gender.includes(newValue)
-        ? filters.gender.filter((value) => value !== newValue)
-        : [...filters.gender, newValue];
-      onFilters('gender', checked);
-    },
-    [filters.gender, onFilters]
-  );
+  // const handleFilterGender = useCallback(
+  //   (newValue: string) => {
+  //     const checked = filters.gender.includes(newValue)
+  //       ? filters.gender.filter((value) => value !== newValue)
+  //       : [...filters.gender, newValue];
+  //     onFilters('gender', checked);
+  //   },
+  //   [filters.gender, onFilters]
+  // );
 
   const handleFilterCategory = useCallback(
     (newValue: string) => {
@@ -103,12 +100,12 @@ export default function ProductFilters({
     [onFilters]
   );
 
-  const handleFilterColors = useCallback(
-    (newValue: string | string[]) => {
-      onFilters('colors', newValue);
-    },
-    [onFilters]
-  );
+  // const handleFilterColors = useCallback(
+  //   (newValue: string | string[]) => {
+  //     onFilters('colors', newValue);
+  //   },
+  //   [onFilters]
+  // );
 
   const handleFilterPriceRange = useCallback(
     (event: Event, newValue: number | number[]) => {
@@ -117,12 +114,12 @@ export default function ProductFilters({
     [onFilters]
   );
 
-  const handleFilterRating = useCallback(
-    (newValue: string) => {
-      onFilters('rating', newValue);
-    },
-    [onFilters]
-  );
+  // const handleFilterRating = useCallback(
+  //   (newValue: string) => {
+  //     onFilters('rating', newValue);
+  //   },
+  //   [onFilters]
+  // );
 
   const renderHead = (
     <Stack
@@ -149,25 +146,25 @@ export default function ProductFilters({
     </Stack>
   );
 
-  const renderGender = (
-    <Stack>
-      <Typography variant="subtitle2" sx={{ mb: 1 }}>
-        Gender
-      </Typography>
-      {genderOptions.map((option) => (
-        <FormControlLabel
-          key={option.value}
-          control={
-            <Checkbox
-              checked={filters.gender.includes(option.label)}
-              onClick={() => handleFilterGender(option.label)}
-            />
-          }
-          label={option.label}
-        />
-      ))}
-    </Stack>
-  );
+  // const renderGender = (
+  //   <Stack>
+  //     <Typography variant="subtitle2" sx={{ mb: 1 }}>
+  //       Gender
+  //     </Typography>
+  //     {genderOptions.map((option) => (
+  //       <FormControlLabel
+  //         key={option.value}
+  //         control={
+  //           <Checkbox
+  //             checked={filters.gender.includes(option.label)}
+  //             onClick={() => handleFilterGender(option.label)}
+  //           />
+  //         }
+  //         label={option.label}
+  //       />
+  //     ))}
+  //   </Stack>
+  // );
 
   const renderCategory = (
     <Stack>
@@ -194,19 +191,19 @@ export default function ProductFilters({
     </Stack>
   );
 
-  const renderColor = (
-    <Stack>
-      <Typography variant="subtitle2" sx={{ mb: 1 }}>
-        Color
-      </Typography>
-      <ColorPicker
-        selected={filters.colors}
-        onSelectColor={(colors) => handleFilterColors(colors)}
-        colors={colorOptions}
-        limit={6}
-      />
-    </Stack>
-  );
+  // const renderColor = (
+  //   <Stack>
+  //     <Typography variant="subtitle2" sx={{ mb: 1 }}>
+  //       Color
+  //     </Typography>
+  //     <ColorPicker
+  //       selected={filters.colors}
+  //       onSelectColor={(colors) => handleFilterColors(colors)}
+  //       colors={colorOptions}
+  //       limit={6}
+  //     />
+  //   </Stack>
+  // );
 
   const renderPrice = (
     <Stack>
@@ -236,33 +233,33 @@ export default function ProductFilters({
     </Stack>
   );
 
-  const renderRating = (
-    <Stack spacing={2} alignItems="flex-start">
-      <Typography variant="subtitle2">Rating</Typography>
+  // const renderRating = (
+  //   <Stack spacing={2} alignItems="flex-start">
+  //     <Typography variant="subtitle2">Rating</Typography>
 
-      {ratingOptions.map((item, index) => (
-        <Stack
-          key={item}
-          direction="row"
-          onClick={() => handleFilterRating(item)}
-          sx={{
-            borderRadius: 1,
-            cursor: 'pointer',
-            typography: 'body2',
-            '&:hover': { opacity: 0.48 },
-            ...(filters.rating === item && {
-              pl: 0.5,
-              pr: 0.75,
-              py: 0.25,
-              bgcolor: 'action.selected',
-            }),
-          }}
-        >
-          <Rating readOnly value={4 - index} sx={{ mr: 1 }} /> & Up
-        </Stack>
-      ))}
-    </Stack>
-  );
+  //     {ratingOptions.map((item, index) => (
+  //       <Stack
+  //         key={item}
+  //         direction="row"
+  //         onClick={() => handleFilterRating(item)}
+  //         sx={{
+  //           borderRadius: 1,
+  //           cursor: 'pointer',
+  //           typography: 'body2',
+  //           '&:hover': { opacity: 0.48 },
+  //           ...(filters.rating === item && {
+  //             pl: 0.5,
+  //             pr: 0.75,
+  //             py: 0.25,
+  //             bgcolor: 'action.selected',
+  //           }),
+  //         }}
+  //       >
+  //         <Rating readOnly value={4 - index} sx={{ mr: 1 }} /> & Up
+  //       </Stack>
+  //     ))}
+  //   </Stack>
+  // );
 
   return (
     <>

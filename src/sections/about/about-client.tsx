@@ -3,21 +3,13 @@ import { useTheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-import SvgColor from 'src/components/svg-color';
 import Carousel, { useCarousel } from 'src/components/carousel';
 import Image from 'src/components/image';
 
-type IBrandProps = {
-    id: string;
-    name: string;
-    image: string;
-  };
-  
+
 // ----------------------------------------------------------------------
 
-type Props = {
-  brands: IBrandProps[];
-};
+
 
 const products = [
     {

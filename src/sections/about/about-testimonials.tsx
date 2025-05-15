@@ -16,7 +16,6 @@ import { useResponsive } from 'src/hooks/use-responsive';
 // utils
 import { fDate } from 'src/utils/format-time';
 // _mock
-import { _testimonials } from 'src/_mock';
 // theme
 import { bgBlur, bgGradient, hideScroll } from 'src/theme/css';
 // components

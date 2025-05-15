@@ -12,10 +12,9 @@ import Typography from '@mui/material/Typography';
 import InputAdornment from '@mui/material/InputAdornment';
 // routes
 import { paths } from 'src/routes/paths';
-import { useSearchParams } from 'src/routes/hook';
+// import { useSearchParams } from 'src/routes/hook';
 import { RouterLink } from 'src/routes/components';
 // config
-import { PATH_AFTER_LOGIN } from 'src/config-global';
 // hooks
 import { useBoolean } from 'src/hooks/use-boolean';
 // auth
@@ -36,9 +35,8 @@ export default function JwtLoginView() {
 
   const [errorMsg, setErrorMsg] = useState('');
 
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
-  const returnTo = searchParams.get('returnTo');
 
   const password = useBoolean();
 

@@ -2,53 +2,21 @@ import { m } from 'framer-motion';
 // @mui
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+
 import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
-import { useResponsive } from 'src/hooks/use-responsive';
 
 // _mock
-import { _carouselsMembers, _socials } from 'src/_mock';
+// import { _carouselsMembers, _socials } from 'src/_mock';
 // components
 import Image from 'src/components/image';
-import Iconify from 'src/components/iconify';
 import { MotionViewport, varFade } from 'src/components/animate';
-import Carousel, { CarouselArrows, useCarousel } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
-const products = [
-  {
-    id: 1,
-    name: 'Hạt điều rang muối vỏ lụa',
-    price: '100.000đ/kg',
-    avatarUrl: `/assets/demo1.png`,
-  },
-  {
-    id: 3,
-    name: 'Hạt điều wasabi',
-    price: '150.000đ/kg',
-    avatarUrl: `/assets/demo3.jpg`,
-  },
-  {
-    id: 4,
-    name: 'Hạt điều tỏi ớt',
-    price: '110.000đ/kg',
-    avatarUrl: `/assets/demo4.jpeg`,
-  },
-  {
-    id: 5,
-    name: 'Hạt điều nhân trắng',
-    price: '90.000đ/kg',
-    avatarUrl: `/assets/demo5.jpg`,
-  },
-];
+
 export default function AboutSafe() {
   const theme = useTheme();
-  const mdUp = useResponsive('up', 'md');
   const isLight = theme.palette.mode === 'light';
 
   const shadow = `-40px 40px 80px ${alpha(

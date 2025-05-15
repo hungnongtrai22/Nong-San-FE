@@ -5,7 +5,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 // @mui
 import LoadingButton from '@mui/lab/LoadingButton';
 import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import Switch from '@mui/material/Switch';
@@ -16,32 +15,27 @@ import Typography from '@mui/material/Typography';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControlLabel from '@mui/material/FormControlLabel';
 // routes
-import { paths } from 'src/routes/paths';
 // hooks
 import { useResponsive } from 'src/hooks/use-responsive';
 // types
 import { IProduct } from 'src/types/product';
 // _mock
 import {
-  _tags,
-  PRODUCT_SIZE_OPTIONS,
-  PRODUCT_GENDER_OPTIONS,
-  PRODUCT_COLOR_NAME_OPTIONS,
-  PRODUCT_CATEGORY_GROUP_OPTIONS,
+  // _tags,
+  // PRODUCT_SIZE_OPTIONS,
+  // PRODUCT_GENDER_OPTIONS,
+  // PRODUCT_COLOR_NAME_OPTIONS,
+  // PRODUCT_CATEGORY_GROUP_OPTIONS,
 } from 'src/_mock';
 // components
 import { CustomFile } from 'src/components/upload';
 import { useSnackbar } from 'src/components/snackbar';
-import { useRouter } from 'src/routes/hook';
 import FormProvider, {
   RHFSelect,
   RHFEditor,
   RHFUpload,
-  RHFSwitch,
   RHFTextField,
-  RHFMultiSelect,
-  RHFAutocomplete,
-  RHFMultiCheckbox,
+
 } from 'src/components/hook-form';
 import axios from 'axios';
 
@@ -56,7 +50,6 @@ type Props = {
 };
 
 export default function ProductNewEditForm({ currentProduct }: Props) {
-  const router = useRouter();
 
   const mdUp = useResponsive('up', 'md');
 
@@ -275,9 +268,9 @@ export default function ProductNewEditForm({ currentProduct }: Props) {
     setValue('images', []);
   }, [setValue]);
 
-  const handleChangeIncludeTaxes = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setIncludeTaxes(event.target.checked);
-  }, []);
+  // const handleChangeIncludeTaxes = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setIncludeTaxes(event.target.checked);
+  // }, []);
 
   const renderDetails = (
     <>

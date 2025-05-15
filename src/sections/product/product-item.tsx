@@ -15,10 +15,10 @@ import { addToCart } from 'src/redux/slices/product';
 // types
 import { IProduct } from 'src/types/product';
 // components
-import Label from 'src/components/label';
+// import Label from 'src/components/label';
 import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
-import { ColorPreview } from 'src/components/color-utils';
+// import { ColorPreview } from 'src/components/color-utils';
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ type Props = {
 };
 
 export default function ProductItem({ product }: Props) {
-  const { _id, name, coverUrl, price, colors, available, sizes, priceSale, newLabel, saleLabel, images } =
+  const { _id, name, price, colors, available, sizes, priceSale, images } =
     product;
 
   console.log(images);

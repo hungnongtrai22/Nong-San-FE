@@ -1,34 +1,20 @@
-import { m } from 'framer-motion';
 // @mui
-import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+
 import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Unstable_Grid2';
-import { useResponsive } from 'src/hooks/use-responsive';
+
 
 // _mock
-import { _carouselsMembers, _socials } from 'src/_mock';
+// import { _carouselsMembers, _socials } from 'src/_mock';
 // components
-import Image from 'src/components/image';
-import Iconify from 'src/components/iconify';
-import { MotionViewport, varFade } from 'src/components/animate';
+
+import { MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 
 export default function AboutCatelog() {
-  const theme = useTheme();
-  const mdUp = useResponsive('up', 'md');
-  const isLight = theme.palette.mode === 'light';
 
-  const shadow = `-40px 40px 80px ${alpha(
-    isLight ? theme.palette.grey[500] : theme.palette.common.black,
-    0.24
-  )}`;
+
 
   return (
     <Container component={MotionViewport} sx={{ textAlign: 'center', py: { xs: 10, md: 15 } }}>

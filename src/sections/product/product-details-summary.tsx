@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import {  useForm } from 'react-hook-form';
 // @mui
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -7,9 +7,7 @@ import Stack from '@mui/material/Stack';
 import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import { formHelperTextClasses } from '@mui/material/FormHelperText';
 // routes
 import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hook';
@@ -18,10 +16,8 @@ import { fShortenNumber, fCurrency } from 'src/utils/format-number';
 // types
 import { IProduct, ICheckoutCartItem } from 'src/types/product';
 // components
-import Label from 'src/components/label';
 import Iconify from 'src/components/iconify';
-import { ColorPicker } from 'src/components/color-utils';
-import FormProvider, { RHFSelect } from 'src/components/hook-form';
+import FormProvider from 'src/components/hook-form';
 //
 import { IncrementerButton } from './_common';
 
@@ -52,14 +48,10 @@ export default function ProductDetailsSummary({
   const {
     _id,
     name,
-    sizes,
     price,
     coverUrl,
-    colors,
-    newLabel,
     available,
     priceSale,
-    saleLabel,
     totalRatings,
     totalReviews,
     inventoryType,
@@ -86,7 +78,7 @@ export default function ProductDetailsSummary({
     defaultValues,
   });
 
-  const { reset, watch, control, setValue, handleSubmit } = methods;
+  const { reset, watch, setValue, handleSubmit } = methods;
 
   const values = watch();
 

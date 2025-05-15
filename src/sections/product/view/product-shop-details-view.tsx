@@ -5,7 +5,6 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
@@ -15,17 +14,14 @@ import { getProduct } from 'src/redux/slices/product';
 // routes
 import { paths } from 'src/routes/paths';
 import { useParams } from 'src/routes/hook';
-import { RouterLink } from 'src/routes/components';
 // components
 import Iconify from 'src/components/iconify';
-import EmptyContent from 'src/components/empty-content';
 import { useSettingsContext } from 'src/components/settings';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs';
 //
 import { CartIcon } from '../_common';
 import { useProduct } from '../hooks';
 import ProductDetailsReview from '../product-details-review';
-import { ProductDetailsSkeleton } from '../product-skeleton';
 import ProductDetailsSummary from '../product-details-summary';
 import ProductDetailsCarousel from '../product-details-carousel';
 import ProductDetailsDescription from '../product-details-description';
@@ -278,25 +274,25 @@ export default function ProductShopDetailsView() {
     setCurrentTab(newValue);
   }, []);
 
-  const renderSkeleton = <ProductDetailsSkeleton />;
+  // const renderSkeleton = <ProductDetailsSkeleton />;
 
-  const renderError = (
-    <EmptyContent
-      filled
-      title={`${productStatus.error?.message}`}
-      action={
-        <Button
-          component={RouterLink}
-          href={paths.product.root}
-          startIcon={<Iconify icon="eva:arrow-ios-back-fill" width={16} />}
-          sx={{ mt: 3 }}
-        >
-          Back to List
-        </Button>
-      }
-      sx={{ py: 10 }}
-    />
-  );
+  // const renderError = (
+  //   <EmptyContent
+  //     filled
+  //     title={`${productStatus.error?.message}`}
+  //     action={
+  //       <Button
+  //         component={RouterLink}
+  //         href={paths.product.root}
+  //         startIcon={<Iconify icon="eva:arrow-ios-back-fill" width={16} />}
+  //         sx={{ mt: 3 }}
+  //       >
+  //         Back to List
+  //       </Button>
+  //     }
+  //     sx={{ py: 10 }}
+  //   />
+  // );
 
   const renderProduct = product && (
     <>

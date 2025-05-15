@@ -5,7 +5,6 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
@@ -17,14 +16,11 @@ import { PRODUCT_PUBLISH_OPTIONS } from 'src/_mock';
 // routes
 import { paths } from 'src/routes/paths';
 import { useParams } from 'src/routes/hook';
-import { RouterLink } from 'src/routes/components';
 // components
 import Iconify from 'src/components/iconify';
-import EmptyContent from 'src/components/empty-content';
 import { useSettingsContext } from 'src/components/settings';
 //
 import { useProduct } from '../hooks';
-import { ProductDetailsSkeleton } from '../product-skeleton';
 import ProductDetailsReview from '../product-details-review';
 import ProductDetailsSummary from '../product-details-summary';
 import ProductDetailsToolbar from '../product-details-toolbar';
@@ -294,25 +290,25 @@ export default function ProductDetailsView() {
     setCurrentTab(newValue);
   }, []);
 
-  const renderSkeleton = <ProductDetailsSkeleton />;
+  // const renderSkeleton = <ProductDetailsSkeleton />;
 
-  const renderError = (
-    <EmptyContent
-      filled
-      title={`${productStatus.error?.message}`}
-      action={
-        <Button
-          component={RouterLink}
-          href={paths.dashboard.product.root}
-          startIcon={<Iconify icon="eva:arrow-ios-back-fill" width={16} />}
-          sx={{ mt: 3 }}
-        >
-          Back to List
-        </Button>
-      }
-      sx={{ py: 10 }}
-    />
-  );
+  // const renderError = (
+  //   <EmptyContent
+  //     filled
+  //     title={`${productStatus.error?.message}`}
+  //     action={
+  //       <Button
+  //         component={RouterLink}
+  //         href={paths.dashboard.product.root}
+  //         startIcon={<Iconify icon="eva:arrow-ios-back-fill" width={16} />}
+  //         sx={{ mt: 3 }}
+  //       >
+  //         Back to List
+  //       </Button>
+  //     }
+  //     sx={{ py: 10 }}
+  //   />
+  // );
 
   const renderProduct = product && (
     <>
